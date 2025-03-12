@@ -48,6 +48,7 @@ import { stacRequestOptions } from '../store/utils';
 import URI from 'urijs';
 import AuthUtils from './auth/utils';
 import { Asset } from 'stac-js';
+import path from 'path';
 
 let i = 0;
 
@@ -157,6 +158,8 @@ export default {
         const props = {
           href: this.href,
           target: '_blank',
+          rel: 'noopener noreferrer',
+          download: path.basename(this.filename)
         };
         if (!this.browserCanOpenFile) {
           props.download = this.filename;
