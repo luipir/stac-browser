@@ -33,7 +33,7 @@ body {
             font-size: 0;
             // Show image
             background-image: url($logo-image);
-            background-position: center;
+            background-position: left;
             background-repeat: no-repeat;
             background-size: contain;
             height: $logo-image-height;
@@ -127,6 +127,11 @@ body {
         max-height: 1.2em;
     }
 
+    h2 {
+        background: transparent;
+        color: map-get($theme-colors, "success");
+    }
+
     .global-error {
         position: fixed;
         bottom: 0;
@@ -174,6 +179,14 @@ body {
             background-color: lighten(desaturate(map-get($theme-colors, "primary"), 50%), 20%);
             &:hover {
                 background-color: darken(map-get($theme-colors, "primary"), 5%);
+            }
+        }
+        .btn-outline-primary {
+            border-color: darken(map-get($theme-colors, "primary"), 15%);
+            color: black;
+            background-color: map-get($theme-colors, "primary");
+            &:hover {
+                border-color: darken(map-get($theme-colors, "primary"), 30%);
             }
         }
     }
