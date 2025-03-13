@@ -159,7 +159,7 @@ export default {
           href: this.href,
           target: '_blank',
           rel: 'noopener noreferrer',
-          download: path.basename(this.filename)
+          // download: path.basename(this.filename)
         };
         // do not populate download attribute to force to open a new tab
         // TODO: check how to disable it via configuration
