@@ -161,9 +161,11 @@ export default {
           rel: 'noopener noreferrer',
           download: path.basename(this.filename)
         };
-        if (!this.browserCanOpenFile) {
-          props.download = this.filename;
-        }
+        // do not populate download attribute to force to open a new tab
+        // TODO: check how to disable it via configuration
+        // if (!this.browserCanOpenFile) {
+        //   props.download = this.filename;
+        // }
         return props;
       }
       return {};
