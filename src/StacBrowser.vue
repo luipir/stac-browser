@@ -291,13 +291,17 @@ export default {
   },
   mounted() {
     this.$root.$on('error', this.showError);
-    setInterval(() => this.$store.dispatch('loadBackground', 3), 200);
-    $("button").attr("aria-label", "info");
-    $("a").attr("aria-label", "info");
-    $("img").attr("alt", "info");
-    $("a").attr("role", "link");
-    $("a").removeAttr("aria-selected");
-    $("a").removeAttr("aria-expanded");
+    setInterval(() => {
+      this.$store.dispatch('loadBackground', 3);
+      $("button").attr("aria-label", "info");
+      $("a").attr("aria-label", "info");
+      $("img").attr("alt", "info");
+      $("a").attr("role", "link");
+      $("a").removeAttr("aria-selected");
+      $("a").removeAttr("aria-expanded");
+      $("a").removeAttr("aria-pressed");
+    }, 200);
+
   },
   methods: {
     ...mapActions(['switchLocale']),
