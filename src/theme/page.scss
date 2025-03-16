@@ -168,6 +168,12 @@ body {
         }
     }
 
+    .btn-outline-primary {
+        color: black;
+        background-color: map-get($theme-colors, "primary");
+        border-color: darken(map-get($theme-colors, "primary"), 15%);
+    }
+
     .btn-group, .btn-group-vertical {
         .btn-primary, .btn-secondary {
             border-color: darken(map-get($theme-colors, "primary"), 15%);
@@ -279,7 +285,7 @@ $primary-color: map-get($theme-colors, "primary");
 
 // Multiselect related style
 #stac-browser {
-  
+
   .multiselect__tags:focus-within {
     border-color: #48cce1;
     outline: 0;
@@ -309,11 +315,13 @@ $primary-color: map-get($theme-colors, "primary");
   .multiselect__option--highlight,
   .multiselect__option--highlight:after {
     background-color: map-get($theme-colors, "primary");
+    color: black;
   }
 
   .multiselect__option--selected.multiselect__option--highlight,
   .multiselect__option--selected.multiselect__option--highlight:after {
     background-color: map-get($theme-colors, "secondary");
+    color: black;
   }
 
   .multiselect__placeholder {
