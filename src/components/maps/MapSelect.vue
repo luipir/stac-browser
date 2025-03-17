@@ -45,13 +45,17 @@ export default {
     initExtent: {
       type: Array,
       default: null
+    },
+    value: {
+      type: Array,
+      default: null
     }
   },
   data() {
     return {
       crs: 'EPSG:4326',
-      extent: this.initExtent,
-      dragging: true
+      extent: this.value,
+      dragging: false
     };
   },
   computed: {
@@ -82,6 +86,9 @@ export default {
   methods: {
     async initMap() {
       this.map = null;
+      if (this.initExtent) {
+        this.extent = this.initExtent;
+      }
 
       await this.createMap(this.$refs.map, this.stac, true);
 
@@ -140,8 +147,10 @@ export default {
         }
       }
       if (extent) {
+        this.map.updateSize();
         this.map.getView().fit(extent, { padding: [50,50,50,50] });
       }
+
     },
     addMask(stac) {
       // Darken areas outside of the available area
