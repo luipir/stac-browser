@@ -483,4 +483,8 @@ export default class Utils {
     return Utils.mergeDeep(target, ...sources);
   }
 
+  static removeQueryFromLink(str) {
+    return str.replace(/\?query=\{.*\}/, '');
+  }
+
 }

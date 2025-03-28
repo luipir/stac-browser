@@ -756,7 +756,12 @@ function getStore(config, router) {
         }
 
         // Load API Collections
+        // adding filter to the collections link if configured
         const apiCollectionLink = data.getApiCollectionsLink();
+        if (apiCollectionLink && apiCollectionLink.href && cx.state.collectionsCQLFilter) {
+          apiCollectionLink.href = Utils.removeQueryFromLink(apiCollectionLink.href) + cx.state.collectionsCQLFilter;
+        }
+
         const apiItemLink = data.getApiItemsLink();
         if (!omitApi && apiCollectionLink) {
           let args = { stac: data, show: loading.show };

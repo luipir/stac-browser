@@ -357,6 +357,12 @@ export default {
       );
     }
     if ((this.type === 'Collections' || this.conformances.CollectionIdFilter) && this.stac) {
+      // get apiCollectionsLink and if link has query, remove it
+      let apiCollectionsLink = this.stac.getApiCollectionsLink();
+      if (apiCollectionsLink && apiCollectionsLink.href) {
+        apiCollectionsLink.href = Utils.removeQueryFromLink(apiCollectionsLink.href);
+      }
+
       promises.push(
         this.loadCollections(this.stac.getApiCollectionsLink())
           .then(({collections, queryableLink}) => {
