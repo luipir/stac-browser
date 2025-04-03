@@ -14,6 +14,7 @@ The following ways to set config options are possible:
   Enable this by removing the `<!--` and `-->` around the `<script defer="defer" src="./config.js"></script>` in the [`public/index.html`](../public/index.html).
   Then run the build procedure and after completion, you can fill the `dist/config.js` with any options that you want to customize.
 
+<<<<<<< HEAD
 ## Table of Contents <!-- omit in toc -->
 
 - [Basic configuration](#basic-configuration)
@@ -61,6 +62,51 @@ The following ways to set config options are possible:
   - [preprocessSTAC](#preprocessstac)
   - [requestHeaders](#requestheaders)
   - [requestQueryParameters](#requestqueryparameters)
+=======
+**The following options are available:**
+
+- [catalogUrl](#catalogurl)
+- [catalogTitle](#catalogtitle)
+- [allowExternalAccess](#allowexternalaccess)
+- [allowedDomains](#alloweddomains)
+- [apiCatalogPriority](#apicatalogpriority)
+- [detectLocaleFromBrowser](#detectlocalefrombrowser)
+- [storeLocale](#storelocale)
+- [locale](#locale)
+- [fallbackLocale](#fallbacklocale)
+- [supportedLocales](#supportedlocales)
+- [historyMode](#historymode)
+  - [`history`](#history)
+  - [`hash`](#hash)
+- [pathPrefix](#pathprefix)
+- [stacProxyUrl](#stacproxyurl)
+- [buildTileUrlTemplate](#buildtileurltemplate)
+- [useTileLayerAsFallback](#usetilelayerasfallback)
+- [displayGeoTiffByDefault](#displaygeotiffbydefault)
+- [redirectLegacyUrls](#redirectlegacyurls)
+- [itemsPerPage](#itemsperpage)
+- [maxItemsPerPage](#maxitemsperpage)
+- [maxPreviewsOnMap](#maxpreviewsonmap)
+- [cardViewMode](#cardviewmode)
+- [cardViewSort](#cardviewsort)
+- [showKeywordsInItemCards](#showkeywordsinitemcards)
+- [showKeywordsInCatalogCards](#showkeywordsincatalogcards)
+- [showThumbnailsAsAssets](#showthumbnailsasassets)
+- [defaultThumbnailSize](#defaultthumbnailsize)
+- [crossOriginMedia](#crossoriginmedia)
+- [requestHeaders](#requestheaders)
+- [requestQueryParameters](#requestqueryparameters)
+- [socialSharing](#socialsharing)
+- [authConfig](#authconfig)
+  - [API Keys](#api-keys)
+    - [Example 1: HTTP Request Header Value](#example-1-http-request-header-value)
+    - [Example 2: Query Parameter Value](#example-2-query-parameter-value)
+  - [HTTP Basic](#http-basic)
+  - [OpenID Connect](#openid-connect)
+    - [Example](#example)
+- [preprocessSTAC](#preprocessstac)
+  - [Example: Update root catalog](#example-update-root-catalog)
+>>>>>>> b85ab977 (Improvements for the actions, including better action documentation #354, removed GeoParquet action for now)
 
 ## Basic configuration
 
