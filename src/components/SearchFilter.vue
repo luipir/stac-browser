@@ -216,7 +216,7 @@ export default {
   },
   computed: {
     ...mapState(['itemsPerPage', 'maxItemsPerPage', 'uiLanguage']),
-    ...mapGetters(['canSearchCollections', 'supportsConformance']),
+    ...mapGetters(['canSearchCollections', 'supportsConformance', 'defaultSearchExtent']),
     collectionSelectOptions() {
       let taggable = !this.hasAllCollections;
       let isResult = this.collections.length > 0 && !this.hasAllCollections;
@@ -258,7 +258,7 @@ export default {
       return null;
     },
     defaultExtent() {
-      return [12.227593034455793, 41.78656913683952, 12.652310726657447, 42.02970865107619];
+      return this.query?.bbox? this.query.bbox : this.defaultSearchExtent;
     },
     andOrOptions() {
       return [
