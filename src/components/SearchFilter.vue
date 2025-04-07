@@ -152,7 +152,7 @@ function getDefaults() {
   return {
     sortOrder: 1,
     sortTerm: null,
-    provideBBox: false,
+    provideBBox: true,
     // Store previous bbox so that it survives when the map is temporarily hidden
     bbox: null,
     query: getQueryDefaults(),
